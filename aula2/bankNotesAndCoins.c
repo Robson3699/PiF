@@ -10,9 +10,9 @@ int main(){
     int vetorM[5]={0,0,0,0,0};
 
     ///conversao para inteiros
-    valorInt=valor;
-    moedas=valor-valorInt;
-    moedasInt=moedas*100+0.01;
+    valorInt=valor;//coverto meu valor total para inteiro
+    moedas=valor-valorInt;//sei a quatidade de moedas em float
+    moedasInt=moedas*100+0.01;//converto as moedas float para int
 
     ////*NOTAS////
     if(valorInt/100>0){

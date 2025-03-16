@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 int main(){
-    double x=0,y=0,z=0;
-    scanf("%lf",&x);
-    scanf("%lf",&y);
-    scanf("%lf",&z); 
-    double vect[3]={x,y,z};
+    double vect[3]={0,0,0};
+    scanf("%lf",&vect[0]);
+    scanf("%lf",&vect[1]);
+    scanf("%lf",&vect[2]); 
     for(int i=0;i<3;i++){
         for(int j=i+1;j<3;j++){
             if(vect[i]<vect[j]){
