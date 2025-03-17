@@ -27,8 +27,5 @@ int main(){
     }else if(vect[0]==vect[1]||vect[0]==vect[2]||vect[1]==vect[2]){
         printf("TRIANGULO ISOSCELES\n");
     }
-
     return 0;
-
-
 }

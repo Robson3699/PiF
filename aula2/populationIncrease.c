@@ -11,7 +11,6 @@ int main(){
         scanf("%d",&pb);
         scanf("%f",&gUm);
         scanf("%f",&gDois);
-        
         cont=0;
 
         while(pa<=pb){

@@ -1,7 +1,6 @@
 #include <stdio.h>
  
 int main() {
- 
    int x=0,y=0,z=0;
    scanf("%d", &x);
    scanf("%d", &y);
@@ -15,8 +14,6 @@ int main() {
                 sort[j]=temp;
               }
          }
-
-
    }
    printf("%d\n",sort[0]);
    printf("%d\n",sort[1]);
@@ -25,11 +22,5 @@ int main() {
    printf("%d\n",x);
    printf("%d\n",y);
    printf("%d\n",z);
-   
-       
-   
-   
-   
- 
     return 0;
 }

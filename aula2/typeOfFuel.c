@@ -11,13 +11,10 @@ int main(){
         }else if(i==3){
             d++;
         }
-
-    }printf("MUITO OBRIGADO\n");
+    }
+    printf("MUITO OBRIGADO\n");
     printf("Alcool: %d\n",a);
     printf("Gasolina: %d\n",g);
     printf("Diesel: %d\n",d);
-
-    
-
     return 0;
 }
