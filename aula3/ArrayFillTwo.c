@@ -12,7 +12,7 @@ int main(){
             cont=0;
 
         }
-        printf("N[%d] = %d\n",i, t[i]);
+        
     }
     
     return 0;
