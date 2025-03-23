@@ -14,9 +14,9 @@ int main(){
     }
 
     
-        for(int i=1;i<12;i++){
-            for(int j=12-i;j<12;j++){
-                sum+=m[i][j];
+        for(int i=7;i<12;i++){
+            for(int j=12-i ;j<i;j++){
+                sum+=m[j][i];
                 div+=1;
             }
             
