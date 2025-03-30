@@ -4,21 +4,22 @@
 
 int main(){
     int n=0,comprimentoA=0,comprimentoB=0,cont=0,exit=0;
-    char a[1001];
-    char b[1001];
     scanf("%d", &n);
     int resp[n];
 
     while(exit!=n){
+    char a[1001];
+    char b[1001];
+    
     scanf("%s", a);
     scanf("%s", b);
 
     comprimentoA=strlen(a);
     comprimentoB=strlen(b);
-    
+
 
     for(int i=0;i<comprimentoB;i++){
-        if(a[comprimentoA-i]==b[comprimentoB-i]){
+        if(b[(comprimentoB-1)-i]==a[(comprimentoA-1)-i]){
             cont+=1;
         }
     }
