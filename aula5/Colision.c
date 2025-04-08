@@ -21,19 +21,19 @@ int Ssort(int r[]){
         }
     }return Smallest;
 
-}int IsRet(int r[],int c[]){
-    int t=0;
-    if(r[0]==r[1]&&r[2]==r[3] && c[0]==c[3]&&c[1]==c[2] && c[1]>=c[0] &&c[2]>=c[3] && r[0]>=r[3] &&r[1]>=r[2]){
-      return t=1;
-    }else{
-        return t;
-    }
+}//int IsRet(int r[],int c[]){
+   // int t=0;
+   // if(r[0]==r[1]&&r[2]==r[3] && c[0]==c[3]&&c[1]==c[2] && c[1]>=c[0] &&c[2]>=c[3] && r[0]>=r[3] &&r[1]>=r[2]){
+    //  return t=1;
+   // }else{
+    //    return t;
+   // }
     
     //ay&&by>dy&&cy
 
     //ax&&dx<cx&&bx
 
-}
+//}
 
 void Position(int Rx, int Ry, int BigR, int SmaR,int BigC,int SamC){
 
@@ -112,12 +112,12 @@ int main(){
     }
 
     for(int i=0;i<n;i++){
-        int t=IsRet(rows,colums);
-        if(t==1){
+        //int t=IsRet(rows,colums);
+        //if(t==1){
         Position(robot[i].rx,robot[i].ry,robot[i].BiggestRows,robot[i].SmallestRows,robot[i].BiggestColums,robot[i].SmallestColums);
-        }else{
-            printf("%d\n",t);
-        }
+       // }else{
+       //     printf("%d\n",t);
+       // }
         
        
     }
