@@ -1,11 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 int main(){
 int nc=0,n=0;
 scanf("%d",&nc);
+
 for(int i=0;i<nc;i++){
     scanf("%d",&n);
+    int *vet;
+    vet=malloc(n* sizeof(int));
+
     int p[n];
     for(int i=0;i<n;i++){
         scanf("%d",&p[i]);
