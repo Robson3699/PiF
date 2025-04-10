@@ -28,7 +28,7 @@ typedef struct
 
 int main(){
 int nc=0;//n=0;
-//int *vet;
+
 
 HeightCity height;
 scanf("%d",&nc);
