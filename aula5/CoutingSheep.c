@@ -5,8 +5,7 @@ int Sort(const void *a, const void *b) {
     return (*(int*)a - *(int*)b);
 }
 
-void Check(int c[], int m){
-    qsort(c, m, sizeof(int), Sort);
+void Check(int *c, int m){
 
     int cont = 1;
 
@@ -19,30 +18,32 @@ void Check(int c[], int m){
     printf("%d\n", cont);
 }
 
+typedef struct 
+{int n;
+    int *c;
 
+}Sheep;
 
 
 
 int main(){
 
-    int t=0,n=0;
+    int t=0;
     scanf("%d", &t);
+    Sheep sheep;
     
  for(int i=0;i<t;i++){
-    scanf("%d",&n);
-    int c[n];
-    for(int i=0;i<n;i++){
-        scanf("%d",&c[i]);
+    scanf("%d",&sheep.n);
+    sheep.c=malloc(sheep.n*sizeof(int));
+    for(int i=0;i<sheep.n;i++){
+        scanf("%d",&sheep.c[i]);
     }
-    
-    Check(c,n);
+    qsort(sheep.c, sheep.n, sizeof(int), Sort);
+    Check(sheep.c,sheep.n);
 
-
+    free(sheep.c);
 
  }
    
-  
-
-
     return 0;
 }
