@@ -1,28 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+int Sort(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
 
 void Check(int c[], int m){
-    int cont=0;
+    qsort(c, m, sizeof(int), Sort);
 
-    for(int i=0;i<m;i++){
-        for(int j=1+i;j<m;j++){
-            if(c[i]==c[j]&&c[j]>0){
-                c[j]=-1;   
-            } 
-    }
-    for(int i=0;i<m;i++){
-        for(int j=1+j;j<m;j++){
-            if(c[i]!=c[j]&&c[j]>0){
+    int cont = 1;
+
+    for (int i = 1; i < m; i++) {
+        if (c[i] != c[i - 1]) {
             cont++;
-            
-            }
         }
     }
 
-
-    
-}printf("%d\n", cont);
+    printf("%d\n", cont);
 }
+
+
 
 
 
@@ -37,6 +34,7 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",&c[i]);
     }
+    
     Check(c,n);
 
 
