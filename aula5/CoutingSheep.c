@@ -25,7 +25,6 @@ typedef struct
 }Sheep;
 
 
-
 int main(){
 
     int t=0;
@@ -40,7 +39,6 @@ int main(){
     }
     qsort(sheep.c, sheep.n, sizeof(int), Sort);
     Check(sheep.c,sheep.n);
-
     free(sheep.c);
 
  }
