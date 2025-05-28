@@ -16,6 +16,7 @@ void TimeToRest(AlarmClock alarm){
     
 
     printf("%d\n",*x);
+    free(x);
  
 
 }
@@ -42,6 +43,7 @@ int main(){
         }
         TimeToRest(alarm);
     }
+    
 
 return 0;
 }
