@@ -15,7 +15,7 @@
 char mapa[ALTURA][LARGURA + 1]; // +1 para o terminador nulo
 
 int x1_pos = 1, y1_pos = 1;   // Jogador 1 começa no canto superior esquerdo
-int x2_pos = 1, y2_pos = 1; // Jogador 2 começa no canto inferior direito
+int x2_pos = 1, y2_pos = 1; // Jogador 2 começa próximo ao canto inferior direito
 
 int turno = 1;
 
@@ -76,6 +76,9 @@ void gerarLabirinto() {
     // Garante que as posições iniciais dos jogadores sejam espaços
     mapa[y1_pos][x1_pos] = ' ';
     mapa[y2_pos][x2_pos] = ' ';
+    
+    // Garante que a saída não seja sobrescrita
+    mapa[ALTURA-2][LARGURA-2] = 'S';
 }
 
 void desenhaMapa() {
@@ -102,7 +105,7 @@ int podeMover(int x, int y) {
 }
 
 int chegouNaSaida(int x, int y) {
-    return mapa[y][x] == 'S';
+    return (x == LARGURA - 2 && y == ALTURA - 2);
 }
 
 char lerTecla() {
@@ -220,9 +223,15 @@ int desafioLogico(char jogador) {
     do {
         resposta = getchar();
         while (getchar() != '\n'); // limpa buffer
-        resposta = (resposta == 'v' || resposta == 'V') ? 'V' : (resposta == 'f' || resposta == 'F') ? 'F' : 0;
-        if (!resposta) printf("Por favor, responda V ou F: ");
-    } while (!resposta);
+        if (resposta == 'v' || resposta == 'V') {
+            resposta = 'V';
+        } else if (resposta == 'f' || resposta == 'F') {
+            resposta = 'F';
+        } else {
+            printf("Por favor, responda V ou F: ");
+            resposta = 0;
+        }
+    } while (resposta != 'V' && resposta != 'F');
 
     return (resposta == 'V' && resultado == 1) || (resposta == 'F' && resultado == 0);
 }
@@ -249,14 +258,14 @@ int main() {
             else if (tecla == 'd') novoX++;
             else continue;
 
-            // Verifica se a nova posição é válida (dentro do mapa e não é parede)
+            // Verifica se a nova posição é válida
             if (novoX < 0 || novoX >= LARGURA || novoY < 0 || novoY >= ALTURA) {
                 continue;
             }
 
             if (!desafioLogico('1')) {
                 printf("Resposta errada! Turno perdido. Pressione Enter...");
-                getchar();
+                while (getchar() != '\n'); // Limpa buffer
                 turno = 2;
                 continue;
             }
@@ -278,14 +287,14 @@ int main() {
             else if (tecla == 'l') novoX++;
             else continue;
 
-            // Verifica se a nova posição é válida (dentro do mapa e não é parede)
+            // Verifica se a nova posição é válida
             if (novoX < 0 || novoX >= LARGURA || novoY < 0 || novoY >= ALTURA) {
                 continue;
             }
 
             if (!desafioLogico('2')) {
                 printf("Resposta errada! Turno perdido. Pressione Enter...");
-                getchar();
+                while (getchar() != '\n'); // Limpa buffer
                 turno = 1;
                 continue;
             }
